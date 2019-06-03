@@ -1,0 +1,6 @@
+route:
+  receiver: 'executor'
+receivers:
+- name: 'executor'
+  webhook_configs:
+  - url: 'http://localhost:8088'

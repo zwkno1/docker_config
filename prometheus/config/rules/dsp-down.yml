@@ -1,0 +1,75 @@
+groups:
+- name: dsp
+  rules:
+  - alert: DSPServerNorthDown
+    expr: absent(container_memory_usage_bytes{name="DSPServer", instance="121.42.136.35:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPResourcedNorthDown
+    expr: absent(container_memory_usage_bytes{name="DSPResourced", instance="121.42.136.35:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPDataNorthDown
+    expr: absent(container_memory_usage_bytes{name="DSPData", instance="121.42.136.35:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPServerMiddleDown
+    expr: absent(container_memory_usage_bytes{name="DSPServer", instance="121.40.208.124:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPResourcedMiddleDown
+    expr: absent(container_memory_usage_bytes{name="DSPResourced", instance="121.40.208.124:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPDataMiddleDown
+    expr: absent(container_memory_usage_bytes{name="DSPData", instance="121.40.208.124:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPServerTestDown
+    expr: absent(container_memory_usage_bytes{name="DSPServer", instance="121.41.31.197:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPResourcedTestDown
+    expr: absent(container_memory_usage_bytes{name="DSPResourced", instance="121.41.31.197:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."
+  - alert: DSPDataTestDown
+    expr: absent(container_memory_usage_bytes{name="DSPData", instance="121.41.31.197:8086"})
+    for: 10s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{$labels.instance}} down"
+      description: "Instance= {{$labels.instance}}, Service/Job ={{$labels.name}} is down for more than 10 sec."

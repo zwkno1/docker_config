@@ -4,5 +4,5 @@ registry:
   readonly: false
   auth:
     enabled: false
-  basic_auth: 
+  basic_auth: "endrOnp3aw=="
 

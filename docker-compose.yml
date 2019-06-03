@@ -8,6 +8,7 @@ services:
     volumes:
        - ./registry-web/config:/conf:ro
        - ./registry-web/db:/data
+    #network_mode: host
     networks:
       - registry-net
     restart: always
@@ -21,10 +22,11 @@ services:
     volumes:
       - ./registry/config:/etc/docker/registry:ro
       - ./registry/data:/var/lib/registry
+    #network_mode: host
     networks:
       - registry-net
     restart: always
 
 networks:
-  registry-net:
+    registry-net:
 
